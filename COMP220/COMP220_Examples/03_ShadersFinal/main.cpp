@@ -152,9 +152,9 @@ int main(int argc, char* args[])
 
 	// An array of 3 vectors which represents 3 vertices
 	static const GLfloat g_vertex_buffer_data[] = {
-		-1.0f, -1.0f, 0.0f,
-		1.0f, -1.0f, 0.0f,
-		0.0f,  1.0f, 0.0f,
+		-0.5f, -0.5f, 0.0f,
+		0.5f, -0.5f, 0.0f,
+		0.0f,  0.5f, 0.0f,
 	};
 
 	// This will identify our vertex buffer
@@ -167,6 +167,24 @@ int main(int argc, char* args[])
 	glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data), g_vertex_buffer_data, GL_STATIC_DRAW);
 
 	GLuint programID = LoadShaders("vert.glsl", "frag.glsl");
+
+	GLint fragColourLocation=glGetUniformLocation(programID, "fragColour");
+	if (fragColourLocation < 0)
+	{
+		printf("Unable to find %s uniform", "fragColour");
+	}
+
+	static const GLfloat fragColour[] = { 0.0f,1.0f,0.0f,1.0f };
+
+	GLint currentTimeLocation= glGetUniformLocation(programID, "time");
+	if (currentTimeLocation < 0)
+	{
+
+	}
+
+	int lastTicks = SDL_GetTicks();
+	int currentTicks = SDL_GetTicks();
+
 
 	//Event loop, we will loop until running is set to false, usually if escape has been pressed or window is closed
 	bool running = true;
@@ -198,10 +216,16 @@ int main(int argc, char* args[])
 			}
 		}
 
+		currentTicks = SDL_GetTicks();
+		float deltaTime = (float)(currentTicks - lastTicks) / 1000.0f;
+
 		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 
 		glUseProgram(programID);
+
+		glUniform4fv(fragColourLocation, 1, fragColour);
+		glUniform1f(currentTimeLocation, (float)(currentTicks)/1000.0f);
 
 		// 1rst attribute buffer : vertices
 		glEnableVertexAttribArray(0);
@@ -219,6 +243,8 @@ int main(int argc, char* args[])
 		glDisableVertexAttribArray(0);
 
 		SDL_GL_SwapWindow(window);
+
+		lastTicks = currentTicks;
 	}
 
 	glDeleteVertexArrays(1, &VertexArrayID);
