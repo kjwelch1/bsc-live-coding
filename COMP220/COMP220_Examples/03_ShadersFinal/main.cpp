@@ -179,7 +179,7 @@ int main(int argc, char* args[])
 	GLint currentTimeLocation= glGetUniformLocation(programID, "time");
 	if (currentTimeLocation < 0)
 	{
-
+		printf("Unable to find %s uniform", "time");
 	}
 
 	int lastTicks = SDL_GetTicks();

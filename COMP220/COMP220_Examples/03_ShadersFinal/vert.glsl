@@ -8,8 +8,8 @@ void main()
 {
 	vec3 newVertexPosition=vertexPosition_modelspace;
 
-	newVertexPosition.y*=sin(time);
-	newVertexPosition.x*=cos(time);
+	newVertexPosition.y+=sin(time);
+	newVertexPosition.x+=cos(time);
 
 	gl_Position=vec4(newVertexPosition,1.0);
 }
