@@ -1,7 +1,7 @@
 #include "Model.h"
 
-//http://ogldev.atspace.co.uk/www/tutorial38/tutorial38.html
-//https://gamedev.stackexchange.com/questions/26382/i-cant-figure-out-how-to-animate-my-loaded-model-with-assimp
+// https://gamedev.stackexchange.com/questions/26382/i-cant-figure-out-how-to-animate-my-loaded-model-with-assimp
+//
 //https://www.youtube.com/watch?v=F-kcaonjHf8&index=2&list=PLRIWtICgwaX2tKWCxdeB7Wv_rTET9JtWW
 int currentBoneID = 0;
 std::map<std::string, int> BoneMap;
@@ -119,12 +119,14 @@ bool loadMeshFromFile(const std::string & filename, std::vector<Mesh*>& meshes, 
 			indices.push_back(currentModelFace.mIndices[2]);
 		}
 
+		printf("Bones %d\n", currentMesh->mNumBones);
 		if (currentMesh->HasBones())
 		{
 			for (int i = 0; i < currentMesh->mNumBones; i++)
 			{
 				aiBone * currentBone = currentMesh->mBones[i];
 				std::string currentBoneName = std::string(currentBone->mName.C_Str());
+				printf("Current Bone %d %s\n", currentBoneID, currentBoneName.c_str());
 				if (BoneMap.find(currentBoneName) == BoneMap.end()) {
 					BoneMap[std::string(currentBone->mName.C_Str())] = currentBoneID;
 					currentBoneID++;
@@ -159,7 +161,7 @@ bool loadMeshFromFile(const std::string & filename, std::vector<Mesh*>& meshes, 
 			animationRootName = boneMapItem.first;
 		}
 	}
-	
+
 	aiNode * animationRootNode= sceneRootNode->FindNode(animationRootName.c_str());
 	std::string jointName = std::string(animationRootNode->mName.C_Str());
 	glm::mat4 transformation = ASSMIPMatrixToGLM(animationRootNode->mTransformation);
@@ -169,7 +171,7 @@ bool loadMeshFromFile(const std::string & filename, std::vector<Mesh*>& meshes, 
 	return true;
 }
 
-bool loadAnimationFromFile(const std::string & filename, Animations * animationController)
+bool loadAnimationFromFile(const std::string & filename, AnimationClip ** clip)
 {
 	Assimp::Importer importer;
 
@@ -204,20 +206,16 @@ bool loadAnimationFromFile(const std::string & filename, Animations * animationC
 
 void processNode(aiNode * parentNode,Joint *parentJoint)
 {
+	Joint * pJoint = parentJoint;
 	for (int i = 0; i < parentNode->mNumChildren; i++)
 	{
-		aiNode *  currentNode= parentNode->mChildren[i];
-		std::string currentNodeName = std::string(currentNode->mName.C_Str());
-		if (BoneMap[currentNodeName]) {
-			//printf("Joint id - %d name - %s\n", currentBoneID, currentNode->mName.C_Str());
-
-			glm::mat4 transformation = ASSMIPMatrixToGLM(currentNode->mTransformation);
-			std::string jointName = std::string(currentNode->mName.C_Str());
-			Joint* currentJoint = new Joint(currentBoneID, jointName, transformation);
-			currentJoint->calculateInverseBindTransform(parentJoint->getBindTransform());
-			parentJoint->addChildJoint(currentJoint);
-			processNode(currentNode, currentJoint);
-
+		std::string nodeName = std::string(parentNode->mChildren[i]->mName.C_Str());
+		if (BoneMap.find(nodeName) != BoneMap.end())
+		{
+			pJoint = new Joint(BoneMap[nodeName], nodeName, parentJoint->getBindTransform());
+			parentJoint->addChildJoint(pJoint);
 		}
+
+		processNode(parentNode->mChildren[i], pJoint);
 	}
 }

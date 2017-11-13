@@ -6,4 +6,5 @@ Animations::Animations()
 
 Animations::~Animations()
 {
+	destroy();
 }

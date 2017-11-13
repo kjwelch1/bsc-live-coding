@@ -25,7 +25,7 @@ bool loadModelFromFile(const std::string& filename, GLuint VBO, GLuint EBO, unsi
 
 bool loadMeshFromFile(const std::string& filename, std::vector<Mesh*>& meshes, Joint **pRootJoint);
 
-bool loadAnimationFromFile(const std::string& filename, Animations* animationController);
+bool loadAnimationFromFile(const std::string& filename, AnimationClip ** clip);
 
 void processNode(aiNode * parentNode, Joint * parentJoint);
 
