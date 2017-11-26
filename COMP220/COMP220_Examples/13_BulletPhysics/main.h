@@ -19,5 +19,7 @@
 #include "Animation.h"
 
 #include <btBulletDynamicsCommon.h>
+#include <btBulletCollisionCommon.h>
+
 
 using namespace glm;

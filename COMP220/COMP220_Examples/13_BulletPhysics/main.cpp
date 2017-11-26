@@ -60,7 +60,7 @@ int main(int argc, char* args[])
 	vec3 objectRotation = vec3(0.0f, glm::radians(-135.0f), 0.0f);
 
 
-	vec3 cameraPosition = vec3(0.0f, 2.0f, -5.0f);
+	vec3 cameraPosition = vec3(0.0f, 2.0f, -15.0f);
 	vec3 cameraTarget = vec3(0.0f, 0.0f, 0.0f);
 	vec3 cameraUp = vec3(0.0f, 1.0f, 0.0f);
 
@@ -161,16 +161,16 @@ int main(int argc, char* args[])
 	btDiscreteDynamicsWorld* dynamicsWorld = new btDiscreteDynamicsWorld(collisionDispatcher, broadphase, solver, collisionConfiguration);
 	dynamicsWorld->setGravity(btVector3(0, -9.8, 0.0));
 
-	btCollisionShape* groundShape = new btStaticPlaneShape(btVector3(0, 1, 0), 1);
+	btCollisionShape* groundShape = new btBoxShape(btVector3(100.0, 0.5, 100.0));
 
-	btCollisionShape* carShape = new btSphereShape(1);
+	btCollisionShape* carShape = new btBoxShape(btVector3(10.0,2.0,10.0));
 
 
 	btDefaultMotionState* groundMotionState =
-		new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(0, -1, 0)));
+		new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(0, -10, 0)));
 
-	btRigidBody::btRigidBodyConstructionInfo
-		groundRigidBodyCI(0, groundMotionState, groundShape, btVector3(0, 0, 0));
+	btRigidBody::btRigidBodyConstructionInfo groundRigidBodyCI(0, groundMotionState, groundShape, 
+		btVector3(0, 0, 0));
 	btRigidBody* groundRigidBody = new btRigidBody(groundRigidBodyCI);
 
 	dynamicsWorld->addRigidBody(groundRigidBody);
@@ -218,11 +218,11 @@ int main(int argc, char* args[])
 		currentTicks = SDL_GetTicks();
 		float deltaTime = (float)(currentTicks - lastTicks) / 1000.0f;
 
-		dynamicsWorld->stepSimulation(1 / 60.0f, 10);
+		dynamicsWorld->stepSimulation(1 / 60.0f);
+
 		btTransform trans;
 		fallRigidBody->getMotionState()->getWorldTransform(trans);
 		btVector3 rigidBodyPos=trans.getOrigin();
-
 		objectPosition = vec3(rigidBodyPos.x(), rigidBodyPos.y(), rigidBodyPos.z());
 
 		mat4 translationMatrix = translate(objectPosition);
@@ -314,14 +314,14 @@ int main(int argc, char* args[])
 	delete fallRigidBody->getMotionState();
 	delete fallRigidBody;
 
-	dynamicsWorld->removeRigidBody(groundRigidBody);
-	delete groundRigidBody->getMotionState();
-	delete groundRigidBody;
+	//dynamicsWorld->removeRigidBody(groundRigidBody);
+	//delete groundRigidBody->getMotionState();
+	//delete groundRigidBody;
 
 
 	delete carShape;
 
-	delete groundShape;
+	//delete groundShape;
 
 	delete dynamicsWorld;
 	delete solver;

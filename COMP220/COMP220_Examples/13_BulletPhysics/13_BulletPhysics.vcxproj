@@ -93,10 +93,14 @@
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>..\..\..\Libraries\bullet3-2.87\src;..\..\..\Libraries\SDL2_image-2.0.1\include;..\..\..\Libraries\assimp\include;..\..\..\Libraries\glm;..\..\..\Libraries\glew-2.1.0\include;..\..\..\Libraries\SDL2-2.0.6\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PreprocessorDefinitions>_MBCS;BT_USE_DOUBLE_PRECISION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <AdditionalOptions>/MP /wd4244 /wd4267 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>..\..\..\Libraries\bullet3-2.87\bin;..\..\..\Libraries\SDL2_image-2.0.1\lib\x64;..\..\..\Libraries\assimp\lib;..\..\..\Libraries\SDL2-2.0.6\lib\x64;..\..\..\Libraries\glew-2.1.0\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2_image.lib;SDL2.lib;SDL2main.lib;OpenGL32.lib;glew32.lib;assimp-vc140-mt.lib;Bullet3Collision_vs2010_x64_debug.lib;Bullet3Dynamics_vs2010_x64_debug.lib;LinearMath_vs2010_x64_debug.lib;Bullet3Geometry_vs2010_x64_debug.lib;Bullet3Common_vs2010_x64_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2_image.lib;SDL2.lib;SDL2main.lib;OpenGL32.lib;glew32.lib;assimp-vc140-mt.lib;BulletSoftBody_vs2010_x64_debug.lib;BulletInverseDynamicsUtils_vs2010_x64_debug.lib;BulletInverseDynamics_vs2010_x64_debug.lib;BulletDynamics_vs2010_x64_debug.lib;BulletCollision_vs2010_x64_debug.lib;LinearMath_vs2010_x64_debug.lib;BussIK_vs2010_x64_debug.lib;Bullet3Common_vs2010_x64_debug.lib;Bullet3OpenCL_clew_vs2010_x64_debug.lib;Bullet3Dynamics_vs2010_x64_debug.lib;Bullet3Collision_vs2010_x64_debug.lib;Bullet3Geometry_vs2010_x64_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
     <PostBuildEvent>
