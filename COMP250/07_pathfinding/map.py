@@ -9,7 +9,7 @@ blue = (100, 100, 255)
 red = (255, 100, 100)
 purple = (200, 0, 255)
 green = (100, 255, 100)
-gray = (200, 200, 200)
+gray = (230, 230, 230)
 
 
 def euclidean_distance((x1, y1), (x2, y2)):
@@ -28,9 +28,19 @@ class Node:
     def __init__(self, x, y):
         self.pos = (x, y)
         self.edges = []
+        self.came_from = None
+        self.priority = 100000
+        self.cost_so_far = 0
 
     def draw(self, screen, colour, radius):
         x, y = self.pos
+
+        try:
+            fx, fy = self.came_from.pos
+            pygame.draw.line(screen, colour, (fx, fy), (x, y))
+        except AttributeError:
+            pass
+
         rect = pygame.Rect(x - radius, y - radius, 2*radius, 2*radius)
         pygame.draw.ellipse(screen, colour, rect)
 
@@ -43,24 +53,20 @@ class Edge:
 
 
 class Map:
-    def __init__(self, (width, height), tile_list, tile_size, include_diagonals):
+    def __init__(self, filename, tile_size, include_diagonals):
         self.tile_size = tile_size
         self.tiles = {}
-
-        valid_tiles = ' *SG'
-        tile_list = [t for t in tile_list if t in valid_tiles]
-
-        x = 0
-        y = 0
-        for tile in tile_list:
-            self.tiles[x, y] = tile
-            x += 1
-            if x >= width:
+        with open(filename, 'rt') as map_file:
+            y = 0
+            for line in map_file:
                 x = 0
+                for tile in line.strip('\n'):
+                    self.tiles[x, y] = tile
+                    x += 1
                 y += 1
 
-        self.width = width
-        self.height = height
+        self.width = max(x for (x,y) in self.tiles.iterkeys()) + 1
+        self.height = max(y for (x,y) in self.tiles.iterkeys()) + 1
 
         self.nodes = {}
         self.start = None
