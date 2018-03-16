@@ -1,0 +1,20 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (BussIK.vcxproj, OpenGL_Window.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  CollisionShape2TriangleMesh.cpp
+  GL_ShapeDrawer.cpp
+  GraphingTexture.cpp
+  GwenParameterInterface.cpp
+  GwenProfileWindow.cpp
+  GwenTextureWindow.cpp
+  gwenUserInterface.cpp
+  InProcessExampleBrowser.cpp
+  OpenGLExampleBrowser.cpp
+E:\bsc-live-coding\Libraries\bullet3-2.87\src\Bullet3Common/b3CommandLineArgs.h(92): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. (compiling source file ..\..\examples\ExampleBrowser\InProcessExampleBrowser.cpp)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\string.h(136): note: see declaration of 'strcpy' (compiling source file ..\..\examples\ExampleBrowser\InProcessExampleBrowser.cpp)
+  OpenGLGuiHelper.cpp
+  ChromeTraceUtil.cpp
+  b3Clock.cpp
+  b3ResourcePath.cpp
+  glew.c
+  clew.c
+..\..\src\clew\clew.c(136): warning C4133: 'function': incompatible types - from 'const char *' to 'LPCWSTR'
+  BulletExampleBrowserLib.vcxproj -> E:\bsc-live-coding\Libraries\bullet3-2.87\build3\vs2010\x64\Debug\BulletExampleBrowserLib.lib

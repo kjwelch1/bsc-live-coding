@@ -1,0 +1,5 @@
+﻿  IDMath.cpp
+  MultiBodyTree.cpp
+  MultiBodyTreeImpl.cpp
+  MultiBodyTreeInitCache.cpp
+  BulletInverseDynamics.vcxproj -> E:\bsc-live-coding\Libraries\bullet3-2.87\build3\vs2010\..\..\bin\BulletInverseDynamics.lib

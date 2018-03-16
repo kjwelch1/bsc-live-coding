@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="test">
-      <UniqueIdentifier>{53AE717E-8CE5-D542-B7B3-4E261A95F39B}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="test\SharedMemory">
-      <UniqueIdentifier>{45DFF955-D63D-F14E-AE6A-10F6B399E9B8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="examples">
-      <UniqueIdentifier>{1AE0E0F4-513E-334F-9447-4E5ED1B714F1}</UniqueIdentifier>
+      <UniqueIdentifier>{84D830B1-70A5-8BBC-99BE-796485EAC04A}</UniqueIdentifier>
     </Filter>
     <Filter Include="examples\SharedMemory">
-      <UniqueIdentifier>{EB1DB7F9-E7F5-FB42-9A21-A140E5D97EC1}</UniqueIdentifier>
+      <UniqueIdentifier>{A3CE13E6-0F3B-CFE0-D82E-673E445AF148}</UniqueIdentifier>
     </Filter>
     <Filter Include="examples\Utils">
-      <UniqueIdentifier>{C5E78E45-EEE9-624D-B016-37286250863F}</UniqueIdentifier>
+      <UniqueIdentifier>{E42C601D-D0FA-5323-B98E-C449A5FB2F88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test">
+      <UniqueIdentifier>{65689E7C-519F-9F0D-FA8B-8510E6A11B0F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test\SharedMemory">
+      <UniqueIdentifier>{2464440E-907A-42A4-D9F1-CDC54547132C}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\examples\SharedMemory\PhysicsClient.h">
+      <Filter>examples\SharedMemory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\examples\SharedMemory\PhysicsClientC_API.h">
       <Filter>examples\SharedMemory</Filter>
     </ClInclude>
     <ClInclude Include="..\..\examples\SharedMemory\PhysicsClientSharedMemory.h">
@@ -33,13 +36,10 @@
     <ClInclude Include="..\..\examples\SharedMemory\PhysicsClientTCP_C_API.h">
       <Filter>examples\SharedMemory</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\examples\SharedMemory\PhysicsClientC_API.h">
+    <ClInclude Include="..\..\examples\SharedMemory\PosixSharedMemory.h">
       <Filter>examples\SharedMemory</Filter>
     </ClInclude>
     <ClInclude Include="..\..\examples\SharedMemory\Win32SharedMemory.h">
-      <Filter>examples\SharedMemory</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\examples\SharedMemory\PosixSharedMemory.h">
       <Filter>examples\SharedMemory</Filter>
     </ClInclude>
     <ClInclude Include="..\..\examples\Utils\b3ResourcePath.h">
@@ -47,10 +47,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\test\SharedMemory\test.c">
-      <Filter>test\SharedMemory</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\examples\SharedMemory\PhysicsClient.cpp">
+      <Filter>examples\SharedMemory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\examples\SharedMemory\PhysicsClientC_API.cpp">
       <Filter>examples\SharedMemory</Filter>
     </ClCompile>
     <ClCompile Include="..\..\examples\SharedMemory\PhysicsClientSharedMemory.cpp">
@@ -65,23 +65,23 @@
     <ClCompile Include="..\..\examples\SharedMemory\PhysicsClientTCP_C_API.cpp">
       <Filter>examples\SharedMemory</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\examples\SharedMemory\PhysicsClientC_API.cpp">
-      <Filter>examples\SharedMemory</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\examples\SharedMemory\Win32SharedMemory.cpp">
+    <ClCompile Include="..\..\examples\SharedMemory\PhysicsDirect.cpp">
       <Filter>examples\SharedMemory</Filter>
     </ClCompile>
     <ClCompile Include="..\..\examples\SharedMemory\PosixSharedMemory.cpp">
       <Filter>examples\SharedMemory</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\examples\Utils\b3ResourcePath.cpp">
-      <Filter>examples\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\examples\SharedMemory\PhysicsDirect.cpp">
+    <ClCompile Include="..\..\examples\SharedMemory\Win32SharedMemory.cpp">
       <Filter>examples\SharedMemory</Filter>
     </ClCompile>
     <ClCompile Include="..\..\examples\Utils\b3Clock.cpp">
       <Filter>examples\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\examples\Utils\b3ResourcePath.cpp">
+      <Filter>examples\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\test\SharedMemory\test.c">
+      <Filter>test\SharedMemory</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

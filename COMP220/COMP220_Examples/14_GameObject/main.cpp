@@ -16,7 +16,7 @@ int main(int argc, char* args[])
 
 	//Create a window, note we have to free the pointer returned using the DestroyWindow Function
 	//https://wiki.libsdl.org/SDL_CreateWindow
-	SDL_Window* window = SDL_CreateWindow("SDL2 Window", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 640, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
+	SDL_Window* window = SDL_CreateWindow("SDL2 Window", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 800, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
 	//Checks to see if the window has been created, the pointer will have a value of some kind
 	if (window == nullptr)
 	{
@@ -56,7 +56,7 @@ int main(int argc, char* args[])
 	vec3 cameraUp = vec3(0.0f, 1.0f, 0.0f);
 
 	mat4 viewMatrix = lookAt(cameraPosition, cameraTarget, cameraUp);
-	mat4 projectionMatrix = perspective(radians(90.0f), float(800 / 640), 0.1f, 1000.0f);
+	mat4 projectionMatrix = perspective(radians(90.0f), float(800 / 800), 0.1f, 1000.0f);
 
 	//Light
 	vec4 ambientLightColour = vec4(1.0f, 1.0f, 1.0f, 1.0f);
@@ -81,18 +81,23 @@ int main(int argc, char* args[])
 	pCar->loadShaderProgram("textureVert.glsl", "textureFrag.glsl");
 	gameObjectList.push_back(pCar);
 
-
-	
-
+	int zero = 0;
+	int mouseX = 0;
+	int mouseY = 0;
+	float mouseSpeed = 0.0001f;
+	float horizontalAngle = 0.0f;
+	float verticalAngle = 0.0f;
+	float deltaTime = 0.0f;
+	float speed = 0.5f;
 
 	//Colour Buffer Texture
-	GLuint colourBufferID = createTexture(800, 640);
+	GLuint colourBufferID = createTexture(800, 800);
 
 	//Create Depth Buffer
 	GLuint depthRenderBufferID;
 	glGenRenderbuffers(1, &depthRenderBufferID);
 	glBindRenderbuffer(GL_RENDERBUFFER, depthRenderBufferID);
-	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT16, 800, 640);
+	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT16, 800, 800);
 
 	//Create Framebuffer
 	GLuint frameBufferID;
@@ -195,22 +200,54 @@ int main(int argc, char* args[])
 	btRigidBody* carRigidBody = new btRigidBody(carRbInfo);
 
 	dynamicsWorld->addRigidBody(carRigidBody);*/
+	//angle calculation
+	glm::vec3 direction = glm::vec3();
+	//right vector
+	glm::vec3 right = glm::vec3();
 
 	glEnable(GL_DEPTH_TEST);
+
 	int lastTicks = SDL_GetTicks();
 	int currentTicks = SDL_GetTicks();
-
 
 	//Event loop, we will loop until running is set to false, usually if escape has been pressed or window is closed
 	bool running = true;
 	//SDL Event structure, this will be checked in the while loop
 	SDL_Event ev;
+	
 	while (running)
 	{
 		//Poll for the events which have happened in this frame
 		//https://wiki.libsdl.org/SDL_PollEvent
 		while (SDL_PollEvent(&ev))
 		{
+			currentTicks = SDL_GetTicks();
+			SDL_WarpMouseInWindow(window, 400, 400);
+			deltaTime = (float)(currentTicks - lastTicks) / 1000.0f;
+			lastTicks = currentTicks;
+			horizontalAngle += mouseSpeed * deltaTime * float(800 / 2 - mouseX);
+			verticalAngle += mouseSpeed * deltaTime * float(800 / 2 - mouseY);
+
+			direction = glm::vec3(
+				cos(verticalAngle) * sin(horizontalAngle),
+				sin(verticalAngle),
+				cos(verticalAngle) * cos(horizontalAngle)
+			);
+			direction = glm::normalize(direction);
+			right = glm::vec3(
+				sin(horizontalAngle - 3.14f / 2.0f),
+				0,
+				cos(horizontalAngle - 3.14f / 2.0f)
+			);
+			right = glm::normalize(right);
+			// Up vector : perpendicular to both direction and right
+			glm::vec3 up = glm::cross(right, direction);
+			up = glm::normalize(up);
+			viewMatrix = glm::lookAt(
+				cameraPosition,           // Camera is here
+				cameraPosition + direction, // and looks here : at the same position, plus "direction"
+				up                  // Head is up (set to 0,-1,0 to look upside-down)
+			);
 			//Switch case for every message we are intereted in
 			switch (ev.type)
 			{
@@ -227,15 +264,55 @@ int main(int argc, char* args[])
 				case SDLK_ESCAPE:
 					running = false;
 					break;
+				case SDLK_w:
+					cameraPosition += direction * deltaTime * speed;
+					break;
+				case SDLK_s:
+					cameraPosition -= direction * deltaTime * speed;
+					break;
+				case SDLK_d:
+					cameraPosition += right * deltaTime * speed;
+					break;
+				case SDLK_a:
+					cameraPosition -= right * deltaTime * speed;
+					break;
 				}
+
+			case SDL_MOUSEMOTION:
+				mouseX = ev.motion.x;
+				mouseY = ev.motion.y;
+				break;
 			}
+			currentTicks = 0;
+			lastTicks = 0;
+			/*SDL_WarpMouseInWindow(window, 400, 320);
+			currentTicks = SDL_GetTicks();
+			deltaTime = (float)(currentTicks - lastTicks) / 1000.0f;
+			horizontalAngle += mouseSpeed * deltaTime * float(800 / 2 - mouseX);
+			verticalAngle += mouseSpeed * deltaTime * float(640 / 2 - mouseY);
+
+			direction = glm::vec3(
+				cos(verticalAngle) * sin(horizontalAngle),
+				sin(verticalAngle),
+				cos(verticalAngle) * cos(horizontalAngle)
+			);
+			//direction = glm::normalize(direction);
+			right = glm::vec3(
+				sin(horizontalAngle - 3.14f / 2.0f),
+				0,
+				cos(horizontalAngle - 3.14f / 2.0f)
+			);
+			// Up vector : perpendicular to both direction and right
+			glm::vec3 up = glm::cross(right, direction);
+
+			viewMatrix = glm::lookAt(
+				cameraPosition,           // Camera is here
+				cameraPosition + direction, // and looks here : at the same position, plus "direction"
+				up                  // Head is up (set to 0,-1,0 to look upside-down)
+			);*/
+
 		}
-
-		currentTicks = SDL_GetTicks();
-		float deltaTime = (float)(currentTicks - lastTicks) / 1000.0f;
-
-		//pCar->update();
-
+		
 		for (GameObject * pObj : gameObjectList)
 		{
 			pObj->update();
@@ -318,7 +395,7 @@ int main(int argc, char* args[])
 		*/
 		SDL_GL_SwapWindow(window);
 
-		lastTicks = currentTicks;
+		//lastTicks = currentTicks;
 	}
 	/**
 	dynamicsWorld->removeRigidBody(carRigidBody);

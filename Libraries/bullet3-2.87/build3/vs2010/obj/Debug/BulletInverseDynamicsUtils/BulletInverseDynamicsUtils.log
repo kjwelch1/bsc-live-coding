@@ -1,0 +1,13 @@
+﻿  CloneTreeCreator.cpp
+  CoilCreator.cpp
+  DillCreator.cpp
+  IDRandomUtil.cpp
+  MultiBodyNameMap.cpp
+  MultiBodyTreeCreator.cpp
+  MultiBodyTreeDebugGraph.cpp
+  RandomTreeCreator.cpp
+  SimpleTreeCreator.cpp
+  User2InternalIndex.cpp
+  btMultiBodyTreeCreator.cpp
+  invdyn_bullet_comparison.cpp
+  BulletInverseDynamicsUtils.vcxproj -> E:\bsc-live-coding\Libraries\bullet3-2.87\build3\vs2010\..\..\bin\BulletInverseDynamicsUtils.lib

@@ -1,0 +1,232 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Bullet3Collision.vcxproj, Bullet3Common.vcxproj, Bullet3Dynamics.vcxproj, Bullet3Geometry.vcxproj, Bullet3OpenCL_clew.vcxproj, BulletCollision.vcxproj, BulletDynamics.vcxproj, BulletExampleBrowserLib.vcxproj, BulletInverseDynamicsUtils.vcxproj, BulletInverseDynamics.vcxproj, BulletSoftBody.vcxproj, BussIK.vcxproj, gwen.vcxproj, LinearMath.vcxproj, OpenGL_Window.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  bChunk.cpp
+  bDNA.cpp
+  bFile.cpp
+  btBulletFile.cpp
+  btBulletWorldImporter.cpp
+  btWorldImporter.cpp
+  BasicExample.cpp
+  BenchmarkDemo.cpp
+  CollisionSdkC_Api.cpp
+  CollisionTutorialBullet2.cpp
+  Bullet2CollisionSdk.cpp
+  RealTimeBullet3CollisionSdk.cpp
+  ConstraintDemo.cpp
+  ConstraintPhysicsSetup.cpp
+  Dof6Spring2Setup.cpp
+  TestHingeTorque.cpp
+  MotorDemo.cpp
+  NN3DWalkers.cpp
+  ExampleEntries.cpp
+  main.cpp
+  Bridge.cpp
+  Chain.cpp
+E:\bsc-live-coding\Libraries\bullet3-2.87\src\Bullet3Common/b3CommandLineArgs.h(92): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. (compiling source file ..\..\examples\ExampleBrowser\main.cpp)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\string.h(136): note: see declaration of 'strcpy' (compiling source file ..\..\examples\ExampleBrowser\main.cpp)
+e:\bsc-live-coding\libraries\bullet3-2.87\examples\evolution\NN3DWalkersTimeWarpBase.h(792): warning C4018: '>': signed/unsigned mismatch (compiling source file ..\..\examples\Evolution\NN3DWalkers.cpp)
+e:\bsc-live-coding\libraries\bullet3-2.87\examples\evolution\NN3DWalkersTimeWarpBase.h(809): warning C4018: '>': signed/unsigned mismatch (compiling source file ..\..\examples\Evolution\NN3DWalkers.cpp)
+  InclinedPlane.cpp
+  MultiPendulum.cpp
+  MultipleBoxes.cpp
+  NewtonsCradle.cpp
+  NewtonsRopeCradle.cpp
+  RigidBodyFromObj.cpp
+  SimpleBox.cpp
+  SimpleCloth.cpp
+  SimpleJoint.cpp
+  ForkLiftDemo.cpp
+  FractureDemo.cpp
+  btFractureBody.cpp
+  btFractureDynamicsWorld.cpp
+  GyroscopicSetup.cpp
+  BspConverter.cpp
+  BspLoader.cpp
+  ImportBspExample.cpp
+  SerializeSetup.cpp
+  ImportColladaSetup.cpp
+  LoadMeshFromCollada.cpp
+  BulletMJCFImporter.cpp
+  ImportMJCFSetup.cpp
+  b3ImportMeshUtility.cpp
+  ImportObjExample.cpp
+  LoadMeshFromObj.cpp
+  Wavefront2GLInstanceGraphicsShape.cpp
+  ImportSDFSetup.cpp
+  ImportSTLSetup.cpp
+  BulletUrdfImporter.cpp
+  ImportURDFSetup.cpp
+  MyMultiBodyCreator.cpp
+  URDF2Bullet.cpp
+  UrdfParser.cpp
+  urdfStringSplit.cpp
+  InverseDynamicsExample.cpp
+  InverseKinematicsExample.cpp
+  InvertedPendulumPDControl.cpp
+  MultiBodyConstraintFeedback.cpp
+  MultiBodySoftContact.cpp
+..\..\examples\InverseDynamics\InverseDynamicsExample.cpp(228): warning C4477: 'sprintf' : format string '%lu' requires an argument of type 'unsigned long', but variadic argument 1 has type '::size_t'
+  ..\..\examples\InverseDynamics\InverseDynamicsExample.cpp(228): note: consider using '%zu' in the format string
+..\..\examples\InverseDynamics\InverseDynamicsExample.cpp(234): warning C4477: 'sprintf' : format string '%lu' requires an argument of type 'unsigned long', but variadic argument 1 has type '::size_t'
+  ..\..\examples\InverseDynamics\InverseDynamicsExample.cpp(234): note: consider using '%zu' in the format string
+  MultiDofDemo.cpp
+  Pendulum.cpp
+  TestJointTorqueSetup.cpp
+  CommonRigidBodyMTBase.cpp
+  MultiThreadedDemo.cpp
+  MultiThreadingExample.cpp
+  b3PosixThreadSupport.cpp
+  b3ThreadSupportInterface.cpp
+  b3Win32ThreadSupport.cpp
+  PairBench.cpp
+  GpuConvexScene.cpp
+  GpuRigidBodyDemo.cpp
+e:\bsc-live-coding\libraries\bullet3-2.87\examples\opencl\rigidbody\GpuRigidBodyDemoInternalData.h(20): warning C4099: 'b3DynamicBvhBroadphase': type name first seen using 'struct' now seen using 'class' (compiling source file ..\..\examples\OpenCL\rigidbody\GpuConvexScene.cpp)
+  E:\bsc-live-coding\Libraries\bullet3-2.87\src\Bullet3OpenCL/RigidBody/b3GpuRigidBodyPipeline.h(35): note: see declaration of 'b3DynamicBvhBroadphase' (compiling source file ..\..\examples\OpenCL\rigidbody\GpuConvexScene.cpp)
+e:\bsc-live-coding\libraries\bullet3-2.87\examples\opencl\rigidbody\GpuRigidBodyDemoInternalData.h(20): warning C4099: 'b3DynamicBvhBroadphase': type name first seen using 'struct' now seen using 'class' (compiling source file ..\..\examples\OpenCL\rigidbody\GpuRigidBodyDemo.cpp)
+  E:\bsc-live-coding\Libraries\bullet3-2.87\src\Bullet3OpenCL/RigidBody/b3GpuRigidBodyPipeline.h(35): note: see declaration of 'b3DynamicBvhBroadphase' (compiling source file ..\..\examples\OpenCL\rigidbody\GpuRigidBodyDemo.cpp)
+  Planar2D.cpp
+  RaytestDemo.cpp
+  CoordinateSystemDemo.cpp
+  DynamicTexturedCubeDemo.cpp
+  RaytracerSetup.cpp
+  RenderInstancingDemo.cpp
+  TimeSeriesCanvas.cpp
+  TimeSeriesExample.cpp
+  TimeSeriesFontData.cpp
+  TinyRendererSetup.cpp
+  TinyVRGui.cpp
+  RigidBodySoftContact.cpp
+  b3RobotSimulatorClientAPI.cpp
+  GripperGraspExample.cpp
+  KukaGraspExample.cpp
+  R2D2GraspExample.cpp
+  RollingFrictionDemo.cpp
+  IKTrajectoryHelper.cpp
+  InProcessMemory.cpp
+  PhysicsClient.cpp
+  PhysicsClientC_API.cpp
+  PhysicsClientExample.cpp
+  PhysicsClientSharedMemory.cpp
+  PhysicsClientSharedMemory2.cpp
+  PhysicsClientSharedMemory2_C_API.cpp
+  PhysicsClientSharedMemory_C_API.cpp
+  PhysicsDirect.cpp
+  PhysicsDirectC_API.cpp
+  PhysicsLoopBack.cpp
+  PhysicsLoopBackC_API.cpp
+  PhysicsServer.cpp
+  PhysicsServerCommandProcessor.cpp
+  PhysicsServerExample.cpp
+  PhysicsServerExampleBullet2.cpp
+  PhysicsServerSharedMemory.cpp
+  PosixSharedMemory.cpp
+  SharedMemoryCommandProcessor.cpp
+  SharedMemoryInProcessPhysicsC_API.cpp
+  TinyRendererVisualShapeConverter.cpp
+  Win32SharedMemory.cpp
+..\..\examples\SharedMemory\PhysicsServerExample.cpp(2422): warning C4838: conversion from 'double' to 'float' requires a narrowing conversion
+..\..\examples\SharedMemory\PhysicsServerExample.cpp(2426): warning C4838: conversion from 'double' to 'float' requires a narrowing conversion
+  b3PluginManager.cpp
+..\..\examples\SharedMemory\TinyRendererVisualShapeConverter.cpp(728): warning C4838: conversion from 'const double' to 'float' requires a narrowing conversion
+  SoftDemo.cpp
+  Jacobian.cpp
+  LinearR2.cpp
+..\..\examples\SharedMemory\b3PluginManager.cpp(117): error C2664: 'HMODULE LoadLibraryW(LPCWSTR)': cannot convert argument 1 from 'const char *' to 'LPCWSTR'
+  ..\..\examples\SharedMemory\b3PluginManager.cpp(117): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+  LinearR3.cpp
+  LinearR4.cpp
+  MatrixRmn.cpp
+  Misc.cpp
+  Node.cpp
+  Tree.cpp
+  VectorRn.cpp
+  tiny_obj_loader.cpp
+  stb_image.cpp
+  tinystr.cpp
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(222): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(230): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(228): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(270): warning C4312: 'type cast': conversion from 'int' to 'float *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(292): warning C4312: 'type cast': conversion from 'int' to 'float *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(290): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(328): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(514): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(552): warning C4312: 'type cast': conversion from 'int' to 'float *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(570): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(1480): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(1509): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(1527): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2501): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2626): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2632): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2640): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2642): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2650): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2684): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2687): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2708): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2711): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2722): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2760): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2958): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2969): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2973): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3150): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3154): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3162): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3170): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3183): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3200): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3204): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3347): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3375): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3386): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3387): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3401): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3420): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3438): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3449): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3458): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3485): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3486): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3700): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3704): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3709): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3720): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3749): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3756): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3773): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3803): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3836): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3948): warning C4312: 'type cast': conversion from 'int' to 'float *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3957): warning C4312: 'type cast': conversion from 'int' to 'float *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3962): warning C4312: 'type cast': conversion from 'int' to 'float *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3966): warning C4312: 'type cast': conversion from 'int' to 'float *' of greater size
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(4015): warning C4312: 'type cast': conversion from 'int' to 'float *' of greater size
+  tinyxml.cpp
+..\..\examples\ThirdPartyLibs\stb_image\stb_image.cpp(4220): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
+  tinyxmlerror.cpp
+  tinyxmlparser.cpp
+  TinyRenderer.cpp
+..\..\examples\ThirdPartyLibs\Wavefront\tiny_obj_loader.cpp(401): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\stdio.h(2260): note: see declaration of 'sscanf'
+  geometry.cpp
+..\..\examples\ThirdPartyLibs\Wavefront\tiny_obj_loader.cpp(651): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\stdio.h(2260): note: see declaration of 'sscanf'
+..\..\examples\ThirdPartyLibs\Wavefront\tiny_obj_loader.cpp(667): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\stdio.h(2260): note: see declaration of 'sscanf'
+  model.cpp
+..\..\examples\ThirdPartyLibs\Wavefront\tiny_obj_loader.cpp(723): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\stdio.h(2260): note: see declaration of 'sscanf'
+  our_gl.cpp
+  tgaimage.cpp
+  Dof6ConstraintTutorial.cpp
+  Tutorial.cpp
+  RobotLoggingUtil.cpp
+  Hinge2Vehicle.cpp
+  VoronoiFractureDemo.cpp
+  btConvexConvexMprAlgorithm.cpp

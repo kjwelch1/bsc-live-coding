@@ -1,0 +1,12 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Bullet3Collision.vcxproj, Bullet3Common.vcxproj, Bullet3Dynamics.vcxproj, Bullet3Geometry.vcxproj, Bullet3OpenCL_clew.vcxproj, BulletExampleBrowserLib.vcxproj, BulletInverseDynamicsUtils.vcxproj, BussIK.vcxproj, gwen.vcxproj, OpenGL_Window.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  btAlignedAllocator.cpp
+  btConvexHull.cpp
+  btConvexHullComputer.cpp
+  btGeometryUtil.cpp
+  btPolarDecomposition.cpp
+  btQuickprof.cpp
+  btSerializer.cpp
+  btSerializer64.cpp
+  btThreads.cpp
+  btVector3.cpp
+  LinearMath.vcxproj -> E:\bsc-live-coding\Libraries\bullet3-2.87\build3\vs2010\x64\Debug\LinearMath.lib
