@@ -136,7 +136,8 @@ int main(int argc, char* args[])
 	GLuint postProcessingProgramID = LoadShaders("passThroughVert.glsl", "postBlackAndWhite.glsl");
 	GLint texture0Location = glGetUniformLocation(postProcessingProgramID, "texture0");
 
-	/**
+	GLint programID = LoadShaders("lightingVert.glsl", "lightingFrag.glsl");
+	
 	GLint currentTimeLocation= glGetUniformLocation(programID, "time");
 	GLint modelMatrixLocation = glGetUniformLocation(programID, "modelMatrix");
 	GLint viewMatrixLocation = glGetUniformLocation(programID, "viewMatrix");
@@ -152,7 +153,7 @@ int main(int argc, char* args[])
 	GLint ambientMaterialColourLocation = glGetUniformLocation(programID, "ambientMaterialColour");
 	GLint diffuseMaterialColourLocation = glGetUniformLocation(programID, "diffuseMaterialColour");
 	GLint specularMaterialColourLocation= glGetUniformLocation(programID, "specularMaterialColour");
-	GLint specularPowerLocation = glGetUniformLocation(programID, "specularPower");*/
+	GLint specularPowerLocation = glGetUniformLocation(programID, "specularPower");
 	/*
 	///collision configuration contains default setup for memory, collision setup. Advanced users can create their own configuration.
 	btDefaultCollisionConfiguration* collisionConfiguration = new btDefaultCollisionConfiguration();
